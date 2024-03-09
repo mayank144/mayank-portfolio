@@ -53,7 +53,7 @@ const TAB_DATA: TabData[] = [
 ];
 export default function AboutSection() {
   const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
+  const [_, startTransition] = useTransition();
 
   const handleTabChange = (id: string) => {
     startTransition(() => {
