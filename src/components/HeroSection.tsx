@@ -1,11 +1,17 @@
 "use client";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
     <section className="lg:py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="grid grid-cols-1 lg:grid-cols-12"
+      >
         <div className="lg:col-span-8 place-self-center text-center sm:text-left justify-self-start">
           <div>
             <h1 className="text-white mb-4 text-4xl lg:text-8xl lg:leading-normal font-extrabold text-center">
@@ -53,7 +59,7 @@ export default function HeroSection() {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
