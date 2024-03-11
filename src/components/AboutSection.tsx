@@ -94,7 +94,7 @@ const TAB_DATA: TabData[] = [
     content: (
       <ul className="pl-2">
         {COMPANY_DETAILS.map((detail) => (
-          <ExperienceItem show={true} item={detail} />
+          <ExperienceItem show={true} item={detail} key={detail.id} />
         ))}
       </ul>
     ),
