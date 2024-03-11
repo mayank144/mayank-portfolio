@@ -49,7 +49,7 @@ export default function EmailSection() {
 
         <div className="flex flex-col mt-5">
           <p className="text-white font-bold">
-            For all developers, software professionals and HR's
+            For all developers, software professionals and HR&apos;s
           </p>
           <div className="flex flex-row mt-4">
             <span className="text-white mr-4">Contact us:</span>
