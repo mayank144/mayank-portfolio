@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { scrollToEmailTemplate } from "@/utils/utilityFunction";
 export interface ItemProps {
   href: string;
   title: string;
@@ -7,12 +7,14 @@ export interface ItemProps {
 export default function Item({ href, title }: Readonly<ItemProps>) {
   return (
     <li>
-      <Link
-        href={"#" + href}
+      <button
+        onClick={() => {
+          scrollToEmailTemplate(href.slice(1));
+        }}
         className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p=0 hover:text-white"
       >
         {title}
-      </Link>
+      </button>
     </li>
   );
 }

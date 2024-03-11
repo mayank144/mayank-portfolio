@@ -41,9 +41,8 @@ export default function ProjectSection() {
   const filteredProjects = projectsData.filter((project) => {
     return project.tag.includes(tag);
   });
-  console.log(filteredProjects);
   return (
-    <section>
+    <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4">
         My Projects
       </h2>

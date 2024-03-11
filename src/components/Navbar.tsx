@@ -1,37 +1,48 @@
 "use client";
 import Link from "next/link";
-import Item from "./Item";
+import Item, { ItemProps } from "./Item";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import MenuOverlayed from "./MenuOverlayed";
-const navLinks = [
+import Image from "next/image";
+const navLinks: ItemProps[] = [
   {
+    href: "#about",
     title: "About",
-    path: "#about",
   },
   {
+    href: "#projects",
     title: "Projects",
-    path: "#projects",
   },
   {
+    href: "#EmailSection",
     title: "Contact",
-    path: "#contact",
   },
 ];
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-95">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto p-8">
+    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
+      <div className="flex lg:py-4 flex-wrap items-center justify-between lg:mx-32 p-2">
         <Link
-          href={"/"}
+          href={
+            process.env.RESUME_URL
+              ? process.env.RESUME_URL
+              : "https://drive.google.com/file/d/1xTRpF0WV8yueQPyrLOcQs-8QU8Lu09-r/view?usp=drive_link"
+          }
           className="text-2xl md:text-5xl text-white font-semibold"
         >
-          LOGO
+          <Image
+            src={"/images/resume-logo.jpg"}
+            alt={"resume-logo"}
+            width={50}
+            height={50}
+          ></Image>
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
+              id="bar3Icon"
               onClick={() => setNavbarOpen(true)}
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
             >
@@ -39,6 +50,7 @@ export default function Navbar() {
             </button>
           ) : (
             <button
+              id="XMarkSign"
               onClick={() => setNavbarOpen(false)}
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
             >
@@ -49,7 +61,7 @@ export default function Navbar() {
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
-              <Item href={link.path} title={link.title} key={link.title} />
+              <Item href={link.href} title={link.title} key={link.title} />
             ))}
           </ul>
         </div>

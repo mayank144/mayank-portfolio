@@ -32,17 +32,49 @@ export default function EmailSection() {
     }
   };
   return (
-    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">
+    <section
+      id="EmailSection"
+      className="grid md:grid-cols-2 my-4 md:my-12 py-24 gap-4"
+    >
       <div>
-        <h5 className="text-xl font-bold text-white my-2">Let&apos;s Connect</h5>
+        <h5 className="text-xl font-bold text-white my-2">
+          Let&apos;s Connect
+        </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          I&apos;m currently looking for new opportunities, my inbox is always open.
-          whether you have a question or just want to say hi, I&apos;ll try my best
-          to get back to you!
+          I&apos;m currently looking for new opportunities, my inbox is always
+          open. whether you have a question or just want to say hi, I&apos;ll
+          try my best to get back to you!
         </p>
-        <div className="socials flex flex-row gap-2 w-20">
-          <Link href="github.com">
+
+        <div className="flex flex-col mt-5">
+          <p className="text-white font-bold">
+            For all developers, software professionals and HR's
+          </p>
+          <div className="flex flex-row mt-4">
+            <span className="text-white mr-4">Contact us:</span>
+            <a href="tel:+91 9643574584" className="text-[#ADB7BE] underline">
+              +(91) 9643574584
+            </a>
+          </div>
+          <div className="flex flex-row">
+            <span className="text-white mr-4">Email:</span>
+            <a
+              href="mailto:mayankgoel756@gmail.com"
+              className="text-[#ADB7BE] underline"
+            >
+              mayankgoel756@gmail.com
+            </a>
+          </div>
+          <div className="mt-4">
+            <span className="text-[#ADB7BE]">
+              Alternatively, fill in the form. Follow Mayank on Linkedin
+            </span>
+          </div>
+        </div>
+
+        <div className="socials flex flex-row gap-2 w-20 mt-4">
+          <Link href="https://github.com/mayank144">
             <Image
               src={"/images/github-mark-white.png"}
               alt={"githubwhitemark"}
@@ -50,7 +82,7 @@ export default function EmailSection() {
               height={100}
             />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="https://www.linkedin.com/in/mayank-goyal-339763151/">
             <Image
               src={"/images/linkedin-white.png"}
               alt={"linkedinwhitemark"}
@@ -60,7 +92,7 @@ export default function EmailSection() {
           </Link>
         </div>
       </div>
-      <div>
+      <div className="mt-20 md:mt-0">
         <form className="flex flex-col" onSubmit={handleSubmit}>
           <div className="mb-6">
             <label

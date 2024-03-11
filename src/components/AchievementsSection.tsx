@@ -37,13 +37,13 @@ export default function AchievementsSection() {
           return (
             <div
               key={index}
-              className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
+              className="flex flex-col items-center justify-center mx-1 lg:mx-4 my-0 lg:my-4"
             >
-              <h2 className="flex flex-row text-white text-4xl font-bold">
+              <h2 className="flex flex-row text-white text-xl lg:text-4xl font-bold">
                 {achievement.prefix}
                 <AnimatedNumbers
                   includeComma
-                  className="text-white text-4xl font-bold"
+                  className="text-white text-xl lg:text-4xl font-bold"
                   transitions={(index) => ({
                     type: "spring",
                     duration: index + 0.3,
