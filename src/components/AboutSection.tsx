@@ -30,7 +30,7 @@ interface EducationDetails {
 const COMPANY_DETAILS: CompanyDetails[] = [
   {
     id: "4",
-    name: "Samsung Research & Development",
+    name: "Samsung(SRIB)",
     title: "Senior Software Engineer",
     period: "(07/2022-present)",
     details: [
