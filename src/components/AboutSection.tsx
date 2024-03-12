@@ -34,91 +34,77 @@ const COMPANY_DETAILS: CompanyDetails[] = [
     id: "3",
     name: "Accolite Digital",
     title: "Senior Software Engineer",
-    period: "(07/2022-present)",
+    period: "(07/2020-07/2022)",
     details: [
-      "Lead the development of a commercialized Web Report using vue.js for visualizing generated health data.",
-      "Create an android library to handle all the server calls and Authorization.",
-      "Designed and implemented a web application for live information monitoring using WebSocket.",
-      "Developed a fitness app enabling users to track running, walking, and analyze their progress in android.",
-      "Developed a module to use AI for some suggestions to users and develop microservices in nestjs.",
+      "Spearheaded the creation of a web application for a hotel management organization, providing visualization of reviews, bookings, and demand predictions.",
+      "Contributed to an employment management portal, introducing a two-way data sync feature.",
+      "Analyzed CSR's and successfully resolved bugs.",
     ],
   },
   {
     id: "2",
     name: "BEL",
-    title: "Senior Software Engineer",
-    period: "(07/2022-present)",
+    title: "Internship",
+    period: "(06/2019-07/2019)",
     details: [
-      "Lead the development of a commercialized Web Report using vue.js for visualizing generated health data.",
-      "Create an android library to handle all the server calls and Authorization.",
-      "Designed and implemented a web application for live information monitoring using WebSocket.",
-      "Developed a fitness app enabling users to track running, walking, and analyze their progress in android.",
-      "Developed a module to use AI for some suggestions to users and develop microservices in nestjs.",
-    ],
-  },
-  {
-    id: "1",
-    name: "Chegg",
-    title: "Senior Software Engineer",
-    period: "(07/2022-present)",
-    details: [
-      "Lead the development of a commercialized Web Report using vue.js for visualizing generated health data.",
-      "Create an android library to handle all the server calls and Authorization.",
-      "Designed and implemented a web application for live information monitoring using WebSocket.",
-      "Developed a fitness app enabling users to track running, walking, and analyze their progress in android.",
-      "Developed a module to use AI for some suggestions to users and develop microservices in nestjs.",
+      "Implemented client-server synchronization using Web Socket technology.",
     ],
   },
 ];
-const TAB_DATA: TabData[] = [
-  {
-    title: "Skills",
-    id: "skills",
-    content: (
-      <ul className="grid grid-cols-2 list-disc pl-2">
-        <li>Node.js</li>
-        <li>Nest.js</li>
-        <li>Next.js</li>
-        <li>React.js</li>
-        <li>MongoDB</li>
-        <li>SQL</li>
-        <li>Azure</li>
-        <li>DSA</li>
-        <li>Android(kotlin)</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Experience",
-    id: "experience",
-    content: (
-      <ul className="pl-2">
-        {COMPANY_DETAILS.map((detail) => (
-          <ExperienceItem show={true} item={detail} key={detail.id} />
-        ))}
-      </ul>
-    ),
-  },
-  {
-    title: "Education",
-    id: "education",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>B.Tech Inderprastha Engineering College</li>
-      </ul>
-    ),
-  },
-  //   {
-  //     title: "Certification",
-  //     id: "certification",
-  //     content: (
-  //       <ul className="list-disc pl-2">
-  //         <li>Samsung Professional Cleared</li>
-  //       </ul>
-  //     ),
-  //   },
-];
+
 export default function AboutSection() {
+  const [experienceItemId, setExperienceItemId] = useState("4");
+  const TAB_DATA: TabData[] = [
+    {
+      title: "Skills",
+      id: "skills",
+      content: (
+        <ul className="grid grid-cols-2 list-disc pl-2">
+          <li>Node.js</li>
+          <li>Nest.js</li>
+          <li>Next.js</li>
+          <li>React.js</li>
+          <li>MongoDB</li>
+          <li>SQL</li>
+          <li>Azure</li>
+          <li>DSA</li>
+          <li>Android(kotlin)</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Experience",
+      id: "experience",
+      content: (
+        <ul className="pl-2">
+          {COMPANY_DETAILS.map((detail) => (
+            <ExperienceItem
+              show={detail.id === experienceItemId}
+              item={detail}
+              key={detail.id}
+              handleExperienceItemClick={() =>
+                handleExperienceItemClick(detail.id)
+              }
+            />
+          ))}
+        </ul>
+      ),
+    },
+    {
+      title: "Education",
+      id: "education",
+      content: (
+        <ul className="list-disc pl-2">
+          <li>B.Tech Inderprastha Engineering College</li>
+        </ul>
+      ),
+    },
+  ];
+
+  const handleExperienceItemClick = (id: string) => {
+    setExperienceItemId(id);
+  };
+
   const [tab, setTab] = useState("skills");
   const [_, startTransition] = useTransition();
 
