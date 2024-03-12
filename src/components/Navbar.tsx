@@ -36,7 +36,7 @@ export default function Navbar() {
             className="rounded-full"
             src={"/images/samsung-logo.png"}
             alt={"samsung-logo"}
-            width={200}
+            width={125}
             height={50}
           ></Image>
         </Link>
