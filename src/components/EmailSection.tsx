@@ -24,11 +24,16 @@ export default function EmailSection() {
       body: JSONdata,
     };
 
+    e.target.email.value = "";
+    e.target.subject.value = "";
+    e.target.message.value = "";
+
     const response = await fetch(endpoint, options);
-    const resData = await response.json();
-    if (resData.status === 200) {
-      console.log("Message sent");
+    if (response.status === 200) {
       setEmailSubmitted(true);
+      setTimeout(() => {
+        setEmailSubmitted(false);
+      }, 3000);
     }
   };
   return (

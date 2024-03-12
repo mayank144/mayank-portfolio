@@ -15,9 +15,14 @@ export async function POST(req: Request, res: Response) {
       react: (
         <>
           <h1>{subject}</h1>
-          <p>Thank you for contacting us</p>
+          <p>Hi {email},</p>
+          <p>Thank you for contacting us.</p>
           <p>New message submitted:</p>
           <p>{message}</p>
+          <br />
+          <p>I will reply as soon as possible</p>
+          <p>Best Regards</p>
+          <p>Mayank Goyal</p>
         </>
       ),
     });

@@ -26,8 +26,8 @@ export default function Navbar() {
       <div className="flex lg:py-4 flex-wrap items-center justify-between lg:mx-32 p-2">
         <Link
           href={
-            process.env.RESUME_URL
-              ? process.env.RESUME_URL
+            process.env.SAMSUNG_URL
+              ? process.env.SAMSUNG_URL
               : "https://en.wikipedia.org/wiki/Samsung"
           }
           className="text-2xl md:text-5xl text-white font-semibold"
