@@ -142,10 +142,10 @@ export default function AboutSection() {
   ];
 
   const handleExperienceItemClick = (id: string) => {
-    setExperienceItemId(id);
+    setExperienceItemId(id !== experienceItemId ? id : "");
   };
   const handleEducationItemClick = (id: string) => {
-    setEducationItemId(id);
+    setEducationItemId(id !== educationItemId ? id : "");
   };
 
   const [tab, setTab] = useState("skills");

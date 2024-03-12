@@ -10,10 +10,10 @@ const navLinks: ItemProps[] = [
     href: "#about",
     title: "About",
   },
-  {
-    href: "#projects",
-    title: "Projects",
-  },
+  // {
+  //   href: "#projects",
+  //   title: "Projects",
+  // },
   {
     href: "#EmailSection",
     title: "Contact",
@@ -28,14 +28,15 @@ export default function Navbar() {
           href={
             process.env.RESUME_URL
               ? process.env.RESUME_URL
-              : "https://drive.google.com/file/d/1xTRpF0WV8yueQPyrLOcQs-8QU8Lu09-r/view?usp=drive_link"
+              : "https://en.wikipedia.org/wiki/Samsung"
           }
           className="text-2xl md:text-5xl text-white font-semibold"
         >
           <Image
-            src={"/images/resume-logo.jpg"}
-            alt={"resume-logo"}
-            width={50}
+            className="rounded-full"
+            src={"/images/samsung-logo.png"}
+            alt={"samsung-logo"}
+            width={200}
             height={50}
           ></Image>
         </Link>
