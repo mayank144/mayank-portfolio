@@ -32,7 +32,7 @@ export default function AchievementsSection() {
         {achievementsList.map((achievement, index) => {
           return (
             <div
-              key={index}
+              key={achievement.metric}
               className="flex flex-col items-center justify-center mx-1 lg:mx-4 my-0 lg:my-4"
             >
               <h2 className="flex flex-row text-white text-xl lg:text-4xl font-bold">

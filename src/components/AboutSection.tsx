@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 import ExperienceItem from "./ExperienceItem";
+import EducationItem from "./EducationItem";
 interface TabData {
   title: string;
   id: string;
@@ -15,6 +16,16 @@ interface CompanyDetails {
   title: string;
   period: string;
   details: string[];
+}
+interface EducationDetails {
+  id: string;
+  degree: string;
+  college: string;
+  period: string;
+  prefix: string;
+  cgpa?: number;
+  percentage?: number;
+  postfix?: string;
 }
 const COMPANY_DETAILS: CompanyDetails[] = [
   {
@@ -51,9 +62,29 @@ const COMPANY_DETAILS: CompanyDetails[] = [
     ],
   },
 ];
+const EDUCATION_DETAILS: EducationDetails[] = [
+  {
+    id: "3",
+    degree: "Bachelor of Technology",
+    college: "Inderprastha Engineering College",
+    period: "(08/2016-08/2020)",
+    prefix: "CGPA:",
+    cgpa: 8.39,
+  },
+  {
+    id: "2",
+    degree: "XII(Senior Secondary)",
+    college: "Central Board Of Senior Secondary School(CBSE)/Delhi",
+    period: "(04/2014-03/2016)",
+    prefix: "Percentage:",
+    percentage: 79.99,
+    postfix: "%",
+  },
+];
 
 export default function AboutSection() {
   const [experienceItemId, setExperienceItemId] = useState("4");
+  const [educationItemId, setEducationItemId] = useState("3");
   const TAB_DATA: TabData[] = [
     {
       title: "Skills",
@@ -94,8 +125,17 @@ export default function AboutSection() {
       title: "Education",
       id: "education",
       content: (
-        <ul className="list-disc pl-2">
-          <li>B.Tech Inderprastha Engineering College</li>
+        <ul className="pl-2">
+          {EDUCATION_DETAILS.map((detail) => (
+            <EducationItem
+              show={detail.id === educationItemId}
+              item={detail}
+              key={detail.id}
+              handleEducationItemClick={() =>
+                handleEducationItemClick(detail.id)
+              }
+            />
+          ))}
         </ul>
       ),
     },
@@ -103,6 +143,9 @@ export default function AboutSection() {
 
   const handleExperienceItemClick = (id: string) => {
     setExperienceItemId(id);
+  };
+  const handleEducationItemClick = (id: string) => {
+    setEducationItemId(id);
   };
 
   const [tab, setTab] = useState("skills");
@@ -142,7 +185,7 @@ export default function AboutSection() {
               </TabButton>
             ))}
           </div>
-          <div className="mt-8">
+          <div className="mt-2">
             {TAB_DATA.find((t) => t.id == tab)?.content}
           </div>
         </div>
