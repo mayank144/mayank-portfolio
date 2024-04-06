@@ -7,7 +7,7 @@ import { scrollToEmailTemplate } from "@/utils/utilityFunction";
 
 const RESUME_URL = process.env.RESUME_URL
   ? process.env.RESUME_URL
-  : "https://drive.google.com/file/d/1xTRpF0WV8yueQPyrLOcQs-8QU8Lu09-r/view?usp=drive_link";
+  : "https://drive.google.com/file/d/1frbOvyvNmW2Db3Q2nz1nFYE3Y50O41FX/view?usp=sharing";
 const TAG: string = HeroSection.name;
 export default function HeroSection() {
   const handleDownloadCv = () => {
