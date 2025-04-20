@@ -29,10 +29,22 @@ interface EducationDetails {
 }
 const COMPANY_DETAILS: CompanyDetails[] = [
   {
+    id: "5",
+    name: "Google",
+    title: "Senior Software Engineer",
+    period: "(10/2025-present)",
+    details: [
+      "Led the implementation of security protocols, enhancing the overall safety and integrity of the product, while ensuring compliance with internal and industry security standards.",
+      "Developed and maintained a robust client-server communication layer, facilitating seamless and efficient data exchange across modules.",
+      "Handled the SDK release process to the Maven repository, managing versioning, dependency management, and documentation to ensure smooth developer experience.",
+      "Took ownership of the UI integration efforts, collaborating closely with design and backend teams to deliver a consistent and performant user interface across platforms.",
+    ],
+  },
+  {
     id: "4",
     name: "Samsung(SRIB)",
     title: "Senior Software Engineer",
-    period: "(07/2022-present)",
+    period: "(07/2022-10/2025)",
     details: [
       "Lead the development of a commercialized Web Report using vue.js for visualizing generated health data.",
       "Create an android library to handle all the server calls and Authorization.",
@@ -83,7 +95,7 @@ const EDUCATION_DETAILS: EducationDetails[] = [
 ];
 
 export default function AboutSection() {
-  const [experienceItemId, setExperienceItemId] = useState("4");
+  const [experienceItemId, setExperienceItemId] = useState("5");
   const [educationItemId, setEducationItemId] = useState("3");
   const TAB_DATA: TabData[] = [
     {

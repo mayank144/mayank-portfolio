@@ -7,7 +7,7 @@ import { scrollToEmailTemplate } from "@/utils/utilityFunction";
 
 const RESUME_URL = process.env.RESUME_URL
   ? process.env.RESUME_URL
-  : "https://drive.google.com/file/d/1B_Q0YoZlQNE-6qC97Ejn-mTFGSRP2Tat/view?usp=sharing";
+  : "https://drive.google.com/file/d/10msNjnXrBKPMOklQuAKbpTCMEPcdEBHF/view?usp=sharing";
 const TAG: string = HeroSection.name;
 export default function HeroSection() {
   const handleDownloadCv = () => {
@@ -36,7 +36,9 @@ export default function HeroSection() {
                   1000,
                   "Senior Developer",
                   1000,
-                  "Samsung Engineer",
+                  "Googler",
+                  1000,
+                  "Ex-Sam Engineer",
                   1000,
                 ]}
                 wrapper="span"
@@ -70,8 +72,8 @@ export default function HeroSection() {
         <div className="md:col-span-5 place-self-center mt-4 md:mt-0">
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] md:w-[400px] md:h-[400px] relative">
             <Image
-              src={"/images/dev_image2.png"}
-              alt={"dev_image2"}
+              src={"/images/dev_image.png"}
+              alt={"dev_image"}
               className="absolute rounded-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               width={400}
               height={400}
