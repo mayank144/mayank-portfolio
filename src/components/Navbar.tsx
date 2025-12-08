@@ -22,9 +22,12 @@ const navLinks: ItemProps[] = [
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
+    <nav
+      className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90"
+      style={{ backgroundColor: "black" }}
+    >
       <div className="flex lg:py-4 flex-wrap items-center justify-between lg:mx-32 p-2">
-        <Link
+        {/* <Link
           href={
             process.env.SAMSUNG_URL
               ? process.env.SAMSUNG_URL
@@ -38,6 +41,18 @@ export default function Navbar() {
             alt={"samsung-logo"}
             width={125}
             height={50}
+          ></Image>
+        </Link> */}
+        <Link
+          href={"https://en.wikipedia.org/wiki/Google"}
+          className="text-2xl md:text-5xl text-white font-semibold"
+        >
+          <Image
+            className="rounded-full"
+            src={"/images/google_logo.png"}
+            alt={"google-logo"}
+            width={80}
+            height={20}
           ></Image>
         </Link>
         <div className="mobile-menu block md:hidden">
