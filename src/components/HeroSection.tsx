@@ -7,9 +7,13 @@ import { scrollToEmailTemplate } from "@/utils/utilityFunction";
 
 const RESUME_URL = process.env.RESUME_URL
   ? process.env.RESUME_URL
-  : "https://drive.google.com/file/d/1Ruxfz33mEBs2a3V8vN2I8MUZEqUlUqrI/view?usp=drive_link";
+  : "https://drive.google.com/file/d/13qc0znTOvc5jFO5IAa4gdSJJ4WeNgWHy/view?usp=drive_link";
 const TAG: string = HeroSection.name;
 export default function HeroSection() {
+  const startYear = 2020;
+  const currentYear = new Date().getFullYear();
+  const years = currentYear - startYear;
+
   const handleDownloadCv = () => {
     Logger.logD(TAG, "handleDownloadCv Called");
     window.location.href = RESUME_URL;
@@ -38,7 +42,7 @@ export default function HeroSection() {
                   1000,
                   "Googler",
                   1000,
-                  "Ex-Sam Engineer",
+                  "Ex-Samsung Engineer",
                   1000,
                 ]}
                 wrapper="span"
@@ -47,7 +51,7 @@ export default function HeroSection() {
               />
             </h1>
             <p className="text-[#ADFFFF] sm:text-xl mb-6 md:text-xl">
-              I am a backend developer with 4 yrs+ experience
+              I am a backend developer with {years}+ yrs experience as of {currentYear}
             </p>
           </div>
           <div className="md:flex md:flex-row md:justify-center md:items-baseline">
@@ -70,9 +74,9 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="md:col-span-5 place-self-center mt-4 md:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] md:w-[400px] md:h-[400px] relative">
+          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] md:w-[400px] md:h-[400px] relative overflow-hidden">
             <Image
-              src={"/images/dev_image.png"}
+              src={"/images/dev_image.jpg"}
               alt={"dev_image"}
               className="absolute rounded-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               width={400}
